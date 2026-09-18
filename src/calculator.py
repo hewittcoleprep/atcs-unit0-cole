@@ -28,11 +28,24 @@ def subtract(a, b):
     """Return b subtracted from a."""
     return a - b
 
+def multiply(a, b):
+    """Return the product of a and b."""
+    return a * b
+
+def divide(a, b):
+    """Return a divided by b"""
+
+    if (b==0):
+        return "Cannot divide by 0"
+    return round(float(a) / b, 4)
+
 
 def main():
     print("Engineering Calculator")
     print(a," + ",b," =", add(a, b))
     print(a," + ",b," =", subtract(a, b))
+    print(a," * ",b," =", multiply(a, b))
+    print(a," / ",b," =", divide(a, b))
 
 
 if __name__ == "__main__":

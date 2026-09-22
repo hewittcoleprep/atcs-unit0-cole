@@ -6,6 +6,7 @@ professional software-engineering workflow rather than syntax.
 """
 a = ""
 b = ""
+operation = ""
 while not isinstance(a, numbers.Number):
     try:
         a = float(input("Input a number for A: "))
@@ -18,6 +19,8 @@ while not isinstance(b, numbers.Number):
     except ValueError:
         continue
 
+while not (operation == "addition" or operation == "subtraction" or operation == "multiplication" or operation == "division"):
+    operation = input("Choose an operation by typing addition, subtraction, multiplication, or division: ")
 
 def add(a, b):
     """Return the sum of a and b."""
@@ -42,10 +45,14 @@ def divide(a, b):
 
 def main():
     print("Engineering Calculator")
-    print(a," + ",b," =", add(a, b))
-    print(a," + ",b," =", subtract(a, b))
-    print(a," * ",b," =", multiply(a, b))
-    print(a," / ",b," =", divide(a, b))
+    if operation == "addition":
+        print(a," + ",b," =", add(a, b))
+    if operation == "subtraction":
+        print(a," - ",b," =", subtract(a, b))
+    if operation == "multiplication":
+        print(a," * ",b," =", multiply(a, b))
+    if operation == "division":
+        print(a," / ",b," =", divide(a, b))
 
 
 if __name__ == "__main__":
